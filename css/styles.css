@@ -701,3 +701,16 @@ span {
         line-height: 1.5;
     }
 }
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5rem;
+}
