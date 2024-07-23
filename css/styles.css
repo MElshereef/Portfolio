@@ -346,14 +346,14 @@ span {
     border-radius: 3rem;
     border: 5px solid transparent;
     cursor: pointer;
-    transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in;
 }
 
 .services-box:hover {
     color: black;
     background: white;
     border: 5px solid var(--main-color);
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 .services-box .service-info {
@@ -482,8 +482,8 @@ span {
 }
 
 .contact form .input-box input,
-.contact form textarea {
-    width: 100%;
+.contact form textarea{
+    width: 100%; 
     padding: 2.5rem;
     font-size: 1.8rem;
     color: var(--text-color);
@@ -493,6 +493,14 @@ span {
     margin: 1.5rem 0;
     resize: none;
 }
+
+.contact form .input-box input:focus,
+.contact form textarea:focus {
+    outline: none;
+    border: 2px solid var(--text-color);
+}
+
+
 
 .contact form .btn{
     margin-top: 2rem;

@@ -59,7 +59,7 @@
           <a href="https://web.facebook.com/mohamed.safeyelshereef/" target="_blank"><i class="bx bxl-facebook"></i></a>
         </div>
         <div class="btn-group">
-          <a href="#" class="btn">Hire Me</a>
+          <a href="mailto:elshereefwork@gmail.com" class="btn">Hire Me</a>
           <a href="#contact" class="btn">Contact</a>
         </div>
       </div>
@@ -76,7 +76,7 @@
       <div class="services-container">
         <div class="services-box" data-aos="fade-right" data-aos-duration="1000">
           <div class="service-info">
-            <h4><i class="bx bx-code-alt"></i>UI/UX Design</h4>
+            <h4></i>UI/UX Design</h4>
             <p>
               I specialize in creating user-friendly and visually appealing
               interfaces that are intuitive and easy to use.
@@ -85,7 +85,7 @@
       </div>
         <div class="services-box" data-aos="fade-left" data-aos-duration="1000">
           <div class="service-info">
-            <h4><i class='bx bx-code-curly'></i>Frontend Development</h4>
+            <h4></i>Frontend Development</h4>
             <p>
               building responsive and scalable frontend applications using modern web technologies such as HTML, CSS, and JavaScript.
               Whether you need a fix for a layout issue or a full-blown website redesign,I can help bring your ideas to life.
@@ -94,7 +94,7 @@
       </div>
         <div class="services-box" data-aos="fade-right" data-aos-duration="1000">
           <div class="service-info">
-            <h4><i class='bx bx-code-block'></i>Backend Development</h4>
+            <h4></i>Backend Development</h4>
             <p>
               building robust and scalable backend applications using modern web technologies such as Node.js, Express.js, and MongoDB.
               expertise in backend frameworks like Django, Flask, and working with databases such as MySQL and MongoDB.
@@ -173,19 +173,20 @@
         <div class="input-group">
           <div class="input-box">
             <input type="text"
-            placeholder="Full Name" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+            placeholder="Full Name" id="name" name="name" class="item" required data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
             <input type="email" 
-            placeholder="Email Address"data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            placeholder="Email Address" id="email" name="email" class="item" required data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            <span id="error"></span>
           </div>
           <div class="input-box">
             <input type="number" 
-            placeholder="Phone Number"data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
-            <input type="text" 
-            placeholder="Email Subject"data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400"> 
+            placeholder="Phone Number" id="phone" name="phone" class="item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+            <input type="text"
+            placeholder="Email Subject" id="subject" name="subject" class="item" required data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
         </div>
         </div>
         <div class="input-group-2">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500"></textarea>
+          <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" id="message" name="message" class="item" required data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500"></textarea>
           <input type="submit" value="Send Message" class="btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
         </div>
       </form>
@@ -208,6 +209,8 @@
         <p>Copyright &copy; 2024 by Mohamed Elshereef. All Rights Reserved.</p>
       </div>
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

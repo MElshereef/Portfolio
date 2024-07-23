@@ -24,3 +24,54 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
+
+// Send Email
+
+const form = document.querySelector("form");
+
+const fullName = document.querySelector("name");
+const email = document.querySelector("email");
+const phone = document.querySelector("phone");
+const subject = document.querySelector("subject");
+const message = document.querySelector("message");
+
+function sendEmail() {
+    
+    var fullName = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var subject = document.getElementById("subject").value;
+    
+    var messageBody = "Name: " + fullName + 
+    "<br>Email: " + email + 
+    "<br>Phone: " + phone ;
+
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "elshereefwork@gmail.com",
+        Password : "0325A6A63B14616B254E9E06BA7B0C9C8833",
+        To : 'elshereefwork@gmail.com',
+        From : "elshereefwork@gmail.com",
+        Subject : subject,
+        Body : messageBody
+    }).then(
+        message => {
+            if(message == "OK"){
+                Swal.fire({
+                    title: "Thank you!",
+                    text: "Your message has been sent!",
+                    icon: "success",
+                });
+                form.reset();
+            }else{
+                alert("Error");
+            }
+        }
+    );
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    sendEmail();
+})
