@@ -33,7 +33,7 @@ const fullName = document.querySelector("name");
 const email = document.querySelector("email");
 const phone = document.querySelector("phone");
 const subject = document.querySelector("subject");
-const message = document.querySelector("message");
+const text_message = document.querySelector("text_message");
 
 function sendEmail() {
     
@@ -41,10 +41,12 @@ function sendEmail() {
     var email = document.getElementById("email").value;
     var phone = document.getElementById("phone").value;
     var subject = document.getElementById("subject").value;
+    var text_message = document.getElementById("text_message").value;
     
     var messageBody = "Name: " + fullName + 
     "<br>Email: " + email + 
-    "<br>Phone: " + phone ;
+    "<br>Phone: " + phone +
+    "<br>Message: " + text_message;
 
     Email.send({
         Host : "smtp.elasticemail.com",
