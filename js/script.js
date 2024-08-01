@@ -35,57 +35,65 @@ const phone = document.querySelector("phone");
 const subject = document.querySelector("subject");
 const text_message = document.querySelector("text_message");
 
+// If form is valid then send email else don't send email
 function validation() {
     var form = document.getElementById("form");
     var email = document.getElementById("email").value;
-    var pattern = /^[a-z0-9.]{1,64}@[a-z0-9.]{1,64}$/;
+    var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email.match(pattern)) {
         form.classList.add("valid");
         form.classList.remove("invalid");
+        return true;
     } else {
         form.classList.remove("valid");
         form.classList.add("invalid");
+        return false;
     }
 }
 
 function sendEmail() {
-    var fullName = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var subject = document.getElementById("subject").value;
-    var text_message = document.getElementById("text_message").value;
+    if (validation()) {
+        var fullName = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var subject = document.getElementById("subject").value;
+        var text_message = document.getElementById("text_message").value;
 
-    var messageBody = "Name: " + fullName + 
-    "<br>Email: " + email + 
-    "<br>Phone: " + phone +
-    "<br>Message: " + text_message;
+        var messageBody = "Name: " + fullName +
+        "<br>Email: " + email +
+        "<br>Phone: " + phone +
+        "<br>Message: " + text_message;
 
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "elshereefwork@gmail.com",
-        Password : "0325A6A63B14616B254E9E06BA7B0C9C8833",
-        To : 'elshereefwork@gmail.com',
-        From : "elshereefwork@gmail.com",
-        Subject : subject,
-        Body : messageBody
-    }).then(
-        message => {
-            if(message == "OK"){
-                Swal.fire({
-                    title: "Thank you!",
-                    text: "Your message has been sent!",
-                    icon: "success",
-                });
-                form.reset();
-            }else{
-                alert("Error");
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "elshereefwork@gmail.com",
+            Password : "0325A6A63B14616B254E9E06BA7B0C9C8833",
+            To : 'elshereefwork@gmail.com',
+            From : "elshereefwork@gmail.com",
+            Subject : subject,
+            Body : messageBody
+        }).then(
+            message => {
+                if(message == "OK"){
+                    Swal.fire({
+                        title: "Thank you!",
+                        text: "Your message has been sent!",
+                        icon: "success",
+                    });
+                    form.reset();
+                } else {
+                    Swal.fire({
+                        title: "Error!",
+                        text: "Something went wrong!",
+                        icon: "error",
+                    });
+                }
             }
-        }
-    );
+        );
+    }
 }
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    validation();
     sendEmail();
-})
+});
