@@ -179,17 +179,17 @@
       <h2 class="heading" data-aos="fade-down"
       data-aos-easing="linear"
       data-aos-duration="1000">Contact <span>Me</span></h2>
-      <form action="">
+      <form id="form" action="">
         <div class="input-group">
           <div class="input-box">
             <input type="text"
             placeholder="Full Name" id="name" name="name" class="item" required data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
             <input type="email" 
-            placeholder="Email Address" id="email" name="email" class="item" required data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            placeholder="Email Address" id="email" name="email" class="email_form" required data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" onkeydown="validation()">
             <span id="error"></span>
           </div>
           <div class="input-box">
-            <input type="number" 
+            <input type="number"
             placeholder="Phone Number" id="phone" name="phone" class="item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
             <input type="text"
             placeholder="Email Subject" id="subject" name="subject" class="item" required data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">

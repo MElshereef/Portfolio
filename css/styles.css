@@ -500,6 +500,15 @@ span {
     border: 2px solid var(--text-color);
 }
 
+/* Valid/Invalid email */
+
+#form.invalid .input-box .email_form{
+    border: 2px solid #ff0000;
+}
+
+#form.valid .input-box .email_form{
+    border: 2px solid #00ff00;
+}
 
 
 .contact form .btn{
