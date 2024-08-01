@@ -275,6 +275,20 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/script.js"></script>
+    <script>
+    function validation() {
+        var form = document.getElementById("form");
+        var email = document.getElementById("email").value;
+        var pattern = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gim;
+        if (email.match(pattern)) {
+            form.classList.add("valid");
+            form.classList.remove("invalid");
+        } else {
+            form.classList.remove("valid");
+            form.classList.add("invalid");
+        }
+    }
+    </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
