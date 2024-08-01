@@ -592,6 +592,7 @@ ul {
     border: 2px solid var(--text-color);
 }
 
+
 /* Valid/Invalid email */
 
 #form.invalid .input-box .email_form{
