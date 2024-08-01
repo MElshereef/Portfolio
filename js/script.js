@@ -38,7 +38,7 @@ const text_message = document.querySelector("text_message");
 function validation() {
     var form = document.getElementById("form");
     var email = document.getElementById("email").value;
-    var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    var pattern = /^[a-z0-9.]{1,64}@[a-z0-9.]{1,64}$/;
     if (email.match(pattern)) {
         form.classList.add("valid");
         form.classList.remove("invalid");
@@ -86,6 +86,6 @@ function sendEmail() {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-
+    validation();
     sendEmail();
 })
