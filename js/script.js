@@ -81,6 +81,8 @@ function sendEmail() {
                         icon: "success",
                     });
                     form.reset();
+                    form.classList.remove("valid");
+                    form.classList.remove("invalid");
                 } else {
                     Swal.fire({
                         title: "Error!",
