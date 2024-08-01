@@ -38,18 +38,13 @@ const text_message = document.querySelector("text_message");
 function validation() {
     var form = document.getElementById("form");
     var email = document.getElementById("email").value;
-    var text = document.getElementById("text");
     var pattern = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gim;
     if (email.match(pattern)) {
         form.classList.add("valid");
         form.classList.remove("invalid");
-        text.innerHTML = "Email Address Is Valid";
-        text.style.color = "#00ff00";
     } else {
         form.classList.remove("valid");
         form.classList.add("invalid");
-        text.innerHTML = "Email Address Is Not Valid";
-        text.style.color = "#ff0000";
     }
 }
 
